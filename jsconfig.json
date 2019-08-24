@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@config/*": ["src/config/*"],
+      "@components/*": ["src/components/*"],
+      "@containers/*": ["src/containers/*"],
+      "@actions/*": ["src/actions/*"],
+      "@reducers/*": ["src/reducers/*"],
+      "@pages/*": ["src/pages/*"],
+      "@assets/*": ["src/assets/*"],
+      "@utils/*": ["src/utils/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

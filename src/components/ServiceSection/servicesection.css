@@ -1,0 +1,69 @@
+.services h2 {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.actions-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.actions-section > :first-child {
+  background: var(--primary-blue)
+    url('../../../public/assets/images/open-account-bg.svg') no-repeat;
+}
+
+.actions-section > :nth-child(2) {
+  background: var(--primary-blue)
+    url('../../../public/assets/images/view-transaction-bg.svg') no-repeat;
+}
+
+.actions-section > :nth-child(3) {
+  background: var(--primary-blue)
+    url('../../../public/assets/images/internet-support-bg.svg') no-repeat;
+}
+
+.action {
+  border-radius: 5px;
+  padding: 1.5rem 4rem 1.5rem 1.5rem;
+  display: flex;
+  justify-items: flex-start;
+  flex-flow: column nowrap;
+  margin-right: 1.5rem;
+  box-shadow: 12px 12px 22px 1px rgba(146, 146, 146, 0.2);
+  color: white;
+  max-width: 300px;
+}
+
+.action img {
+  height: 65px;
+  width: 65px;
+}
+
+.action h4 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .actions-section {
+    flex-flow: row wrap;
+    text-align: center;
+    align-items: center;
+    padding-bottom: rem;
+  }
+
+  .action {
+    margin-top: 1rem;
+    margin-right: 0;
+    height: 12rem;
+    text-align: start;
+  }
+
+  .services h2 {
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+  }
+}

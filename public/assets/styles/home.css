@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+
+:root {
+  --primary-blue: #0c4bef;
+  --accent-yellow: #fbb416;
+  --danger-red: #ff3d3d;
+  --success-green: #13ce03;
+  --light-grey: #a0a0a0;
+  --dark-grey: #333333;
+  --input-color: #dae5f7;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: repeat(3, auto);
+}
+
+.top-banner {
+  background: var(--primary-blue) url('../images/top-banner-img.svg') no-repeat;
+  background-size: cover;
+  padding: 0 2rem 0 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+.fa {
+  margin-right: 4px;
+}
+
+nav a {
+  padding: 0.9rem 2.5rem;
+  border: 0;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 50px;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 700;
+  color: white;
+  font-size: 50px;
+  max-width: 45%;
+  margin-top: 5rem;
+  margin-bottom: 11rem;
+  line-height: 70px;
+}
+
+.wrapper header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+header .logo {
+  width: 90px;
+  height: auto;
+}
+
+nav {
+  color: white;
+}
+
+nav a {
+  margin: 0 1.5rem;
+  text-align: center;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  font-size: 17px;
+  text-transform: initial;
+  outline: none;
+  cursor: pointer;
+}
+
+nav button:hover {
+  opacity: 0.8;
+}
+
+/**
+modals
+**/
+.modal {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: 1px solid var(--input-color);
+  outline: none;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.onboarding-modal {
+  background-color: white;
+  padding: 40px 40px 50px 40px;
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
+  width: 320px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.onboarding-modal a {
+  padding: 0.9rem 2.5rem;
+  border: 0;
+  color: white;
+  background: var(--primary-blue);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.onboarding-modal img {
+  height: auto;
+  width: 80px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.onboarding-modal p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.onboarding-modal a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-grey);
+}
+
+.ct-select-group {
+  height: 44px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.ct-select-group .ct-select {
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4f4f4f;
+  user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 1px solid #dae5f7;
+  border-radius: 3px;
+  outline: none;
+}
+
+.ct-select-group .ct-select option {
+  font-size: 18px;
+  background: #fff;
+}
+
+.ct-select-group:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 44px;
+  width: calc(100% - 64px);
+  background: transparent;
+  z-index: 0;
+}
+
+.ct-select-group:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/arrow-drop-down.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/**stop scrolling
+**/
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.create-account-section a {
+  padding: 0.9rem 2.5rem;
+  border: 0;
+  color: white;
+  background: var(--accent-yellow);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 2px;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  header .logo {
+    width: 70px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    line-height: 55px;
+    max-width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+  }
+
+  .top-banner {
+    padding: 0 1rem 0 1.8rem;
+  }
+
+  nav a {
+    margin: 0 0.9rem;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .easy-banking-section {
+    padding: 2rem 2rem;
+  }
+
+  .easy-banking-section p {
+    font-size: 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .create-account-section {
+    flex-flow: row wrap;
+    text-align: center;
+    align-items: center;
+  }
+
+  .create-account-section h5 {
+    margin-right: 0;
+  }
+
+  a {
+    display: inline-block;
+    width: 11rem;
+    text-align: center;
+  }
+
+  nav a {
+    width: initial;
+    text-align: center;
+  }
+
+  .onboarding-modal {
+    margin-right: 0px;
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

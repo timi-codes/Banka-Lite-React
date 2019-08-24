@@ -1,19 +1,23 @@
-const { DefinePlugin } = require(`webpack`);
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.export = {
+module.exports = {
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   devServer: {
-    historyApiFallback: true,
-    watchOptions: {
-      ignored: /node_modules/,
+    historyApiFallback: {
+      disableDotRule: true
     },
+    port: 3000,
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/'
   },
   plugins: [
-    new DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-      },
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
     }),
   ],
 };
