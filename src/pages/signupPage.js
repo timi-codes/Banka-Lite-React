@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { signup } from '@actions/auth'
 import '../../public/assets/styles/onboard.css'
+import {Link} from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import SyncLoader from 'react-spinners/SyncLoader';
@@ -58,12 +59,12 @@ signup to get started
           }}
         >
           {({ errors, touched, isSubmitting }) => (
-            <Form>
-              <Field type="text" name="firstname" placeholder="First Name" />
+            <Form id="form">
+              <Field type="text" name="firstname" placeholder="First Name" data-testid="firstname" />
               {
                 errors.firstname && touched.firstname && (<p className="error">{errors.firstname}</p>)
               }
-              <Field type="text" name="lastname" placeholder="Last Name" />
+              <Field type="text" name="lastname" placeholder="Last Name" data-testid="lastname" />
               {
                 errors.lastname && touched.lastname && (<p className="error">{errors.lastname}</p>)
               }
@@ -71,6 +72,7 @@ signup to get started
                 type="email"
                 id="email"
                 name="email"
+                data-testid="email"
                 placeholder="Email Address"
               />
               {
@@ -80,6 +82,7 @@ signup to get started
                 type="password"
                 name="password"
                 placeholder="Password"
+                data-testid="password"
               />
               {
                 errors.password && touched.password && (<p className="error">{errors.password}</p>)
@@ -87,20 +90,21 @@ signup to get started
               {
                 error && (<p className="error">{error}</p>)
               }
-              {
-                isPending ? (
-                  <SyncLoader
-                    sizeUnit="em"
-                    size={0.6}
-                    color="blue"
-                    loading={isPending}
-                  />
-                ): (              
-                  <button className="signup" type="submit" disabled={isSubmitting}>
-                Sign Up
-                  </button>
-                )
-              }
+              <button type="submit" disabled={isSubmitting} data-testid="submit-form">
+                {isSubmitting ? 'SUBMITTING':  'Signup'}
+              </button>
+              <div className="loader">
+                <SyncLoader
+                  sizeUnit="em"
+                  size={0.6}
+                  color="red"
+                  loading={isPending}
+                />
+                <h4>
+                  Already have an account?
+                  <span><Link to="/login">Login</Link></span>
+                </h4>
+              </div>
             </Form>
           )}
         </Formik>

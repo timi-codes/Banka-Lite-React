@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import App from '@components/App';
 import * as Toastr from 'toastr';
+import App from './routes/AppRouter';
 import store from './store/configureStore';
+import './index.css'
 import '../node_modules/toastr/build/toastr.css';
-
 Toastr.options = {
   closeButton: false,
   debug: false,

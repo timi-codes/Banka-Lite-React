@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createAccount } from '@actions/account'
 
 class AccountModal extends Component {
@@ -21,7 +22,7 @@ class AccountModal extends Component {
 
   render(){
     const { type } = this.state;
-    const { createNewAccount, error, close, history } = this.props;
+    const { createNewAccount, error, user, close } = this.props;
   return (
     <div id="accountModal" className="modal">
       <div className="onboarding-modal">
@@ -44,7 +45,7 @@ class AccountModal extends Component {
             id="email"
             name="email"
             placeholder="Email Address"
-            value="timitejumola@gmail.com"
+            value={user.email}
             disabled
           />
         </label>
@@ -79,7 +80,7 @@ class AccountModal extends Component {
           className="signup"
           type="button"
           onClick={()=>{
-          createNewAccount(type, history)
+          createNewAccount(type)
           close()
         }}
         >
@@ -93,12 +94,23 @@ class AccountModal extends Component {
   )};
 };
 
+AccountModal.defaultProps = {
+  error: null,
+};
+
+AccountModal.propTypes = {
+  error: PropTypes.string,
+  close: PropTypes.func.isRequired,
+  createNewAccount: PropTypes.func.isRequired
+}
+
 const mapStateToProps = (state)=>({
   error: state.account.error,
+  user: state.auth.user
 });
 
 const mapDispatchToProps = dispatch => ({
-  createNewAccount : (type, history) => { dispatch(createAccount(type, history))}
+  createNewAccount : (type) => { dispatch(createAccount(type))}
 });
 
 export default connect(

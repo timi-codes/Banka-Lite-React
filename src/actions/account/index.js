@@ -4,14 +4,12 @@ import { getErrorResponse, getSuccessResponse } from '@utils/getResponse';
 import * as Toastr from 'toastr';
 import { decodeToken } from '@utils';
 
-const { FETCH_ACCOUNT_PENDING, FETCH_ACCOUNT_SUCCESS, ACCOUNT_FAILED, FETCH_TRANSACTION_SUCCESS } = actionTypes;
+const { FETCH_ACCOUNT_PENDING, FETCH_ACCOUNT_SUCCESS, ACCOUNT_FAILED, FETCH_TRANSACTION_SUCCESS, CREATE_ACCOUNT } = actionTypes;
 
 export const fetchAccountPending = ()=>({
   type: FETCH_ACCOUNT_PENDING,
   payload: {
     isPending: true,
-    accounts: [],
-    transactions: []
   }
 });
 
@@ -21,6 +19,16 @@ export const fetchAccountSuccess = (accounts)=>{
     payload: {
       isPending: false,
       accounts,
+    }
+  }
+}
+
+export const createNewAccount = (account)=>{
+  return {
+    type: CREATE_ACCOUNT,
+    payload: {
+      isPending: false,
+      ...account
     }
   }
 }
@@ -44,7 +52,6 @@ export const fetchAccountFailed = () => {
   }
 }
 
-
 export const fetchAccounts = (history)=> {
   return async dispatch => {
     dispatch(fetchAccountPending());
@@ -56,7 +63,6 @@ export const fetchAccounts = (history)=> {
       const {data} = getSuccessResponse(response);
       dispatch(fetchAccountSuccess(data));
     } catch(error){
-
       const message = getErrorResponse(error);
       Toastr.error(message);
       dispatch(fetchAccountFailed());
@@ -67,7 +73,7 @@ export const fetchAccounts = (history)=> {
 
 
 
-export const createAccount = (type, history)=> {
+export const createAccount = (type)=> {
   return async dispatch => {
 
     dispatch(fetchAccountPending());
@@ -79,9 +85,8 @@ export const createAccount = (type, history)=> {
       },{ headers: { "token": `Bearer ${token}`}});
 
       const { data } = getSuccessResponse(response);
-      await fetchAccounts(history)
+      dispatch(createNewAccount(data));
       Toastr.success("Account created successfully");
-
     } catch(error){
       const message = getErrorResponse(error);
       Toastr.error(message);

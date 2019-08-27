@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { login } from '@actions/auth'
 import '../../public/assets/styles/onboard.css'
 import { Formik, Form, Field } from 'formik';
+import {Link} from 'react-router-dom';
 import * as Yup from 'yup';
 import SyncLoader from 'react-spinners/SyncLoader';
 
@@ -35,20 +36,20 @@ const LoginForm = ({
       <div className="blue_section"><h1>We are creating Financial Happiness for all.</h1></div>
       <div className="form-container">
         <img src="../../../public/assets/images/banka-blue-logo.svg" alt="logo" />
-        <h3>Welcome back, Login</h3>
+        <h3>Welcome back, login to continue</h3>
         <Formik
           initialValues={{
-                email: '',
-                password: ''
-              }}
+            email: '',
+            password: ''
+          }}
           validationSchema={loginSchema}
           onSubmit={(values, actions) => {
-                onSubmit({userData: values, history});
-                actions.setSubmitting(false);
+            onSubmit({userData: values, history});
+            actions.setSubmitting(false);
           }}
         >
           {({ errors, touched, isSubmitting }) => (
-            <Form>
+            <Form id="form">
               <Field
                 type="text"
                 id="email"
@@ -70,20 +71,23 @@ const LoginForm = ({
               {
                 error && (<p className="error">{error}</p>)
               }
-              {
-                isPending ? (
-                  <SyncLoader
-                    sizeUnit="em"
-                    size={0.6}
-                    color="red"
-                    loading={isPending}
-                  />
-                ): (              
-                  <button className="signup" type="submit" disabled={isSubmitting}>
+           
+              <button type="submit" disabled={isSubmitting}>
                 Login
-                  </button>
-                )
-              }
+              </button>
+              <div className="loader">
+                <SyncLoader
+                  sizeUnit="em"
+                  size={0.6}
+                  color="red"
+                  loading={isPending}
+                />
+                <h4>
+                  You don't have an account?
+                  <span><Link to="/signup">Register</Link></span>
+                </h4>
+              </div>
+
             </Form>
           )}
         </Formik>
@@ -100,6 +104,9 @@ LoginForm.defaultProps = {
 LoginForm.propTypes = {
   isPending: PropTypes.bool,
   error: PropTypes.string,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired,
   onSubmit: PropTypes.func.isRequired
 }
 

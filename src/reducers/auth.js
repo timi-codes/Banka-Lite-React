@@ -1,6 +1,6 @@
 import actionTypes from '@actions/actionTypes';
 
-const { AUTH_PENDING, AUTH_SUCCESS, AUTH_FAILED } = actionTypes;
+const { AUTH_PENDING, AUTH_SUCCESS, AUTH_FAILED, GET_USER_FROM_TOKEN } = actionTypes;
 
 const initialState = {
   isPending: false,
@@ -9,9 +9,30 @@ const initialState = {
   error: null
 };
 
-const types = [AUTH_PENDING, AUTH_SUCCESS, AUTH_FAILED];
 const auth = (state = initialState, {type, payload}) => {
-  return types.includes(type) ? {...state, ...payload} : state;
+  switch(type){
+    case AUTH_PENDING:
+      return Object.assign({},state, {
+        isPending: payload.isPending
+      })
+    case AUTH_SUCCESS:
+      return Object.assign({}, state, {
+        isPending: payload.isPending,
+        isAuthenticated: payload.isAuthenticated,
+        user: payload.user
+      })
+    case GET_USER_FROM_TOKEN:
+      return Object.assign({}, state, {
+        user: payload.user
+      });
+    case AUTH_FAILED:
+      return Object.assign({}, state, {
+        isPending: payload.isPending,
+        error: payload.error,
+      })
+    default :
+      return state
+  }
 };
 
 export default auth;

@@ -28,6 +28,12 @@ h1 {
   max-width: 100% !important
 }
 
+h3 {
+  text-align: center;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
 .form-container {
   display: flex;
   flex-basis: 50%;
@@ -39,7 +45,80 @@ h1 {
 }
 
 .form-container img {
-  margin-bottom: 10px;
-  width: 130px;
-  height: 130px
+  width: 120px;
+  height: 120px
+}
+
+.form-container button {
+  background: var(--primary-blue);
+  padding: 1rem 2rem;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 16px
+}
+
+.form-container button:hover {
+  background: var(accent-yellow)
+}
+
+
+.error {
+  color: var(--danger-red);
+  font-size: 14px;
+}
+
+#form {
+  width: 25rem;
+}
+
+
+.loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2em;
+  text-align: center
+}
+
+.loader span {
+  margin-left: 10px;
+  color: var(--accent-yellow);
+  font-size: 14px;
+}
+
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 16px 0;
+  border: 1px solid var(--input-color);
+  outline: none;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .blue_section {
+    display: none;
+  }
+
+  .form-container {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-items: center;
+    align-self: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  #form {
+    width: 19rem;
+  }
 }

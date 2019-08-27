@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import SignupModal from '@components/Signup';
 import AchievementSection from '@components/AchievementSection';
 import ServiceSection from '@components/ServiceSection';
-import Modal from 'react-modal';
 import '../../public/assets/styles/home.css';
 
 const customStyles = {
@@ -24,7 +22,6 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#root');
 
 const HomePage = () => {
 

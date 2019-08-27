@@ -1,13 +1,14 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import { fetchAccounts } from '@actions/account'
+import { getUserFromToken } from '@actions/auth'
+
 import SyncLoader from 'react-spinners/SyncLoader';
 import AccountModal from '@components/Account';
 import NavBar from '@components/NavBar';
 import Modal from 'react-modal';
-import { decodeToken } from '@utils';
 import '../../public/assets/styles/customer.css';
 
 const customStyles = {
@@ -28,7 +29,7 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 
 class CustomerDashboard extends Component{
@@ -40,8 +41,9 @@ class CustomerDashboard extends Component{
   }
 
   componentDidMount () {
-    const {getAccounts, history} = this.props
-    getAccounts('sholaadeola@gmail.com', history)
+    const {getAccounts, history, getCurrentUser} = this.props
+    getAccounts(history);
+    getCurrentUser(history);
   }
 
   setModalType (type){
@@ -58,11 +60,7 @@ class CustomerDashboard extends Component{
 
   render() {
     const { modalType } = this.state;
-    console.log(modalType)
-
-    const { isPending, accounts, error, history } = this.props;
-    console.log(accounts.length);
-    const user = decodeToken(history)
+    const { isPending, accounts, user } = this.props;
     return (
       <div className="dash-wrapper">
         <NavBar className="header" user={user} />
@@ -112,7 +110,7 @@ class CustomerDashboard extends Component{
                     {  accounts.map(account=>{
                     const formatted = moment(account.createdOn).format('D, MMMM YYYY')
                     return (
-                      <tr>
+                      <tr key={account.Number}>
                         <td>
                           <img src={`../../public/assets/images/${account.type}-account-logo.svg`} alt={`${account.type}`} />                          
                         </td>
@@ -161,11 +159,26 @@ CustomerDashboard.defaultProps = {
   error: null,
 };
 
+// {
+//   accountNumber: PropTypes.string.isRequired,
+//   firstName: PropTypes.string.isRequired,
+//   lastName: PropTypes.string.isRequired,
+//   type: PropTypes.string.isRequired,
+//   balance: PropTypes.string.isRequired,
+//   status: PropTypes.string.isRequired,
+// }
+
 CustomerDashboard.propTypes = {
   isPending: PropTypes.bool.isRequired,
-  error: PropTypes.string,
+  user: PropTypes.shape({
+    email: PropTypes.string.isRequired
+  }).isRequired,
   accounts: PropTypes.array.isRequired,
-  getAccounts: PropTypes.func.isRequired
+  getAccounts: PropTypes.func.isRequired,
+  getCurrentUser: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
 }
 
 
@@ -178,7 +191,8 @@ const mapStateToProps = (state)=>({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getAccounts : (history) => { dispatch(fetchAccounts(history))}
+  getAccounts : (history) => { dispatch(fetchAccounts(history))},
+  getCurrentUser: () => { dispatch(getUserFromToken())}
 });
 
 export default connect(

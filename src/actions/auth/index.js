@@ -2,9 +2,17 @@ import actionTypes from '@actions/actionTypes';
 import client from '@config/client';
 import { getErrorResponse, getSuccessResponse } from '@utils/getResponse';
 import * as Toastr from 'toastr';
+import jwtDecode from 'jwt-decode';
 import { saveToLocalStorage, decodeToken } from '@utils';
 
-const { AUTH_PENDING, AUTH_SUCCESS, AUTH_FAILED } = actionTypes;
+const { AUTH_PENDING, AUTH_SUCCESS, AUTH_FAILED, GET_USER_FROM_TOKEN, LOG_OUT } = actionTypes;
+
+export const getUser = (data)=>({ 
+  type: GET_USER_FROM_TOKEN, 
+  payload: {
+    user: data
+  } 
+});
 
 export const authPending = ()=>({
   type: AUTH_PENDING,
@@ -34,6 +42,22 @@ export const authFailure = (error)=>{
   }
 }
 
+export const getUserFromToken = (history) => {
+  return async dispatch => {
+    const token = localStorage.getItem('token');
+    if(token) {
+      const payload = jwtDecode(token);
+      const { exp, ...data } = payload;
+      const time = Date.now() / 1000;
+      if (exp > time) {
+        dispatch(getUser(data));
+      }
+      return history && history.push('/');
+    }
+    dispatch({ type: LOG_OUT, payload: { isPending: false, user: {}, error: ''}});
+    return history && history.push('/');
+  }
+}
 
 export const login = ({userData, history})=> {
   return async dispatch => {
@@ -65,7 +89,7 @@ export const login = ({userData, history})=> {
       
     } catch(error){
       const message = getErrorResponse(error);
-      Toastr.error("message");
+      Toastr.error(message);
       dispatch(authFailure(message));
     }
   }
@@ -87,8 +111,6 @@ export const signup = ({userData, history})=> async dispatch => {
     const {data:{ token }} = getSuccessResponse(response);
 
     saveToLocalStorage(token);
-    localStorage.setItem('firstName', firstName);
-    localStorage.setItem('lastName', lastName);
     const user = decodeToken({ history });
 
     Toastr.success('Welcome to banka');
@@ -97,7 +119,7 @@ export const signup = ({userData, history})=> async dispatch => {
     return history.push('/dashboard/customer');
   } catch(error){
     const message = getErrorResponse(error);
-    Toastr.error("message");
+    Toastr.error(message);
     dispatch(authFailure(message));
   }
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
 
 :root {
@@ -12,17 +12,11 @@
   --cream-green: #e8fff9;
 }
 
-/*border box alows us to add padding and border to our elemets without increasing their size */
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-/*We inherit box-sizing: border-box from <html> selector 
-  as this will give us more felexibility of using other box sizing value(box-padding,
-  content-box) with worry about universal selector overriding our CSS
-  *:after, *:before caters for pseodo element box-sizing*/
 
 *,
 *:before,
@@ -101,6 +95,7 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -108,8 +103,7 @@ body {
 
 .slider {
   overflow-y: hidden;
-  max-height: 500px; /* approximate max height */
-
+  max-height: 500px;
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
@@ -166,7 +160,7 @@ h4 {
   display: grid;
   height: 100vh;
   grid-template-rows: auto auto 1fr;
-  grid-template-areas: 'header header' 'banner banner' 'content content';
+  grid-template-areas: 'header header''banner banner''content content';
 }
 
 .dash-wrapper header {
@@ -178,8 +172,7 @@ h4 {
 .banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: var(--primary-blue) url('../images/dashboard-top-banner.svg')
-    no-repeat center center fixed;
+  background: var(--primary-blue) url('../images/dashboard-top-banner.svg') no-repeat center center fixed;
   grid-area: banner;
   padding: 1.5rem 0.7rem;
 }
@@ -194,7 +187,6 @@ h4 {
 .balance h3 {
   font-size: 2.5rem;
   line-height: 1.2;
-  /* font-weight: 800; */
 }
 
 .banner button {
@@ -211,6 +203,7 @@ h4 {
   align-self: center;
   cursor: pointer;
 }
+
 .content {
   display: flex;
   justify-content: center;
@@ -222,7 +215,6 @@ h4 {
   overflow-x: hidden;
 }
 
-/*tables*/
 table {
   margin: auto;
   text-align: center;
@@ -242,6 +234,7 @@ td {
   font-size: 14px;
   font-weight: 400;
 }
+
 th {
   padding: 13px;
   color: var(--dark-grey);
@@ -325,10 +318,12 @@ td .delete {
   border-radius: 3px;
   outline: none;
 }
+
 .ct-select-group .ct-select option {
   font-size: 18px;
   background: #fff;
 }
+
 .ct-select-group:before {
   content: '';
   position: absolute;
@@ -339,6 +334,7 @@ td .delete {
   background: transparent;
   z-index: 0;
 }
+
 .ct-select-group:after {
   content: '';
   position: absolute;
@@ -352,9 +348,6 @@ td .delete {
   z-index: 0;
 }
 
-/**
-modals
-**/
 .modal {
   left: 0;
   top: 0;
@@ -445,8 +438,6 @@ button:hover {
   background-repeat: no-repeat;
 }
 
-/**stop scrolling
-**/
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
@@ -531,4 +522,4 @@ button:hover {
   .onboarding-modal {
     width: 300px;
   }
-}
+} */

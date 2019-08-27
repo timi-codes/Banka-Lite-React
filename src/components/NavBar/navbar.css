@@ -1,8 +1,8 @@
-.dash-wrapper {
+/* .dash-wrapper {
   display: grid;
   height: 100vh;
   grid-template-rows: auto auto 1fr;
-  grid-template-areas: 'header header' 'banner banner' 'content content';
+  grid-template-areas: 'header header''banner banner''content content';
 }
 
 header {
@@ -13,9 +13,7 @@ header {
 .banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: var(--primary-blue)
-    url('../../../public/assets/images/dashboard-top-banner.svg') no-repeat
-    center center fixed;
+  background: var(--primary-blue) url('../../../public/assets/images/dashboard-top-banner.svg') no-repeat center center fixed;
   grid-area: banner;
   padding: 1.5rem 0.7rem;
 }
@@ -30,7 +28,6 @@ header {
 .balance h3 {
   font-size: 2.5rem;
   line-height: 1.2;
-  /* font-weight: 800; */
 }
 
 .banner button {
@@ -47,6 +44,7 @@ header {
   align-self: center;
   cursor: pointer;
 }
+
 .content {
   display: flex;
   justify-content: center;
@@ -85,4 +83,4 @@ h4 {
 
 .top a img {
   width: 75%;
-}
+} */
