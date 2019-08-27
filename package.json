@@ -4,7 +4,9 @@
   "description": "🏦Banka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --env=jsdom --coverage",
+    "test:watch": "jest --env=jsdom --watch --coverage",
+    "coverage": "cat ./coverage/lcov.info | coveralls",
     "start": "node server.js",
     "heroku-postbuild": "npm run build",
     "start:dev": "webpack-dev-server --hot --env.mode development --open",

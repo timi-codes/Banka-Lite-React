@@ -16,6 +16,12 @@ module.exports = {
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    shallow: true,
+    mount: true,
+    expect: true,
+    render: true,
+    toJson: true,
+    moxios: true,
   },
   parserOptions: {
     ecmaFeatures: {
