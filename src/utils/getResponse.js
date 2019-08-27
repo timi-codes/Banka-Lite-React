@@ -2,14 +2,14 @@ export const getSuccessResponse = response => {
   return response.data;
 };
 
-export const getErrorResponse = error => {
-  if (error.response) {
-    const { response } = error;
-    const { message } = response.data;
-    return message;
+export const getErrorResponse = err => {
+  if (err.response) {
+    const { response } = err;
+    const { error } = response.data;
+    return error;
   }
-  if (error.message) {
-    const { message } = error;
+  if (err.message) {
+    const { message } = err;
     return message;
   }
 };

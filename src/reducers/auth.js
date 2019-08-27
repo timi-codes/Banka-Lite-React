@@ -11,7 +11,7 @@ const initialState = {
 
 const types = [AUTH_PENDING, AUTH_SUCCESS, AUTH_FAILED];
 const auth = (state = initialState, {type, payload}) => {
-  return types.includes(type) ? Object.assign({}, state, ...payload) : state;
+  return types.includes(type) ? {...state, ...payload} : state;
 };
 
 export default auth;

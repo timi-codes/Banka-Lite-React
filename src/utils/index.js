@@ -2,7 +2,7 @@ import jwtDecode from 'jwt-decode';
 
 export const saveToLocalStorage = (token) => {
   if (token) {
-    localStorage.setItem('token', JSON.stringify(token));
+    localStorage.setItem('token', token);
   }
 };
 

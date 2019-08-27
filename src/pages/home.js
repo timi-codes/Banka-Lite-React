@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import { connect } from 'react-redux'
-import LoginModal from '@components/Login';
 import SignupModal from '@components/Signup';
 import AchievementSection from '@components/AchievementSection';
 import ServiceSection from '@components/ServiceSection';
@@ -29,13 +27,6 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 const HomePage = () => {
-  const [modalType, setModalType] = useState('none');
-
-  const afterOpenModal = () => {};
-
-  const closeModal = () => {
-    setModalType('none');
-  };
 
   return (
     <div className="wrapper">
@@ -87,7 +78,7 @@ const HomePage = () => {
         <Link className="create-account-button" to="/signup">Click here</Link>
       </div>
       <ServiceSection />
-      <Modal
+      {/* <Modal
         isOpen={modalType === 'signup'}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
@@ -95,17 +86,7 @@ const HomePage = () => {
         contentLabel="Signup Modal"
       >
         <SignupModal />
-      </Modal>
-
-      <Modal
-        isOpen={modalType === 'login'}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Login Modal"
-      >
-        <LoginModal />
-      </Modal>
+      </Modal> */}
     </div>
   );
 };

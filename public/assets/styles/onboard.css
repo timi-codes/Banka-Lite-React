@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+
+:root {
+  --primary-blue: #0c4bef;
+  --accent-yellow: #fbb416;
+  --danger-red: #ff3d3d;
+  --success-green: #13ce03;
+  --light-grey: #a0a0a0;
+  --dark-grey: #333333;
+  --input-color: #dae5f7;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.blue_section {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-blue);
+  flex-basis: 50%;
+  padding: 0 5rem;
+}
+
+h1 {
+  max-width: 100% !important
+}
+
+.form-container {
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+  justify-items: center;
+  align-self: center;
+  align-items: center;
+  padding: 0 10rem;
+}
+
+.form-container img {
+  margin-bottom: 10px;
+  width: 130px;
+  height: 130px
+}

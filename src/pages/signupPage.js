@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { login } from '@actions/auth'
+import { signup } from '@actions/auth'
 import '../../public/assets/styles/onboard.css'
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
@@ -10,6 +10,10 @@ import SyncLoader from 'react-spinners/SyncLoader';
 
 
 const loginSchema = Yup.object().shape({
+  firstname: Yup.string()
+    .required('First Name is required'),
+  lastname: Yup.string()
+    .required('Last Name is required'),
   email: Yup.string()
     .trim()
     .matches(
@@ -18,12 +22,13 @@ const loginSchema = Yup.object().shape({
     )
     .required('Email address is required'),
   password: Yup.string()
+    .trim()
     .min(8, 'password should be a minimun of 8 characters')
     .required('Passwords is required')
 });
 
 
-const LoginForm = ({
+const SignUpForm = ({
   isPending,
   error,
   onSubmit,
@@ -35,11 +40,16 @@ const LoginForm = ({
       <div className="blue_section"><h1>We are creating Financial Happiness for all.</h1></div>
       <div className="form-container">
         <img src="../../../public/assets/images/banka-blue-logo.svg" alt="logo" />
-        <h3>Welcome back, Login</h3>
+        <h3>
+Welcome back to banka,
+signup to get started
+        </h3>
         <Formik
           initialValues={{
-                email: '',
-                password: ''
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: '',
               }}
           validationSchema={loginSchema}
           onSubmit={(values, actions) => {
@@ -49,8 +59,16 @@ const LoginForm = ({
         >
           {({ errors, touched, isSubmitting }) => (
             <Form>
+              <Field type="text" name="firstname" placeholder="First Name" />
+              {
+                errors.firstname && touched.firstname && (<p className="error">{errors.firstname}</p>)
+              }
+              <Field type="text" name="lastname" placeholder="Last Name" />
+              {
+                errors.lastname && touched.lastname && (<p className="error">{errors.lastname}</p>)
+              }
               <Field
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 placeholder="Email Address"
@@ -60,7 +78,6 @@ const LoginForm = ({
               }
               <Field
                 type="password"
-                id="password"
                 name="password"
                 placeholder="Password"
               />
@@ -75,12 +92,12 @@ const LoginForm = ({
                   <SyncLoader
                     sizeUnit="em"
                     size={0.6}
-                    color="red"
+                    color="blue"
                     loading={isPending}
                   />
                 ): (              
                   <button className="signup" type="submit" disabled={isSubmitting}>
-                Login
+                Sign Up
                   </button>
                 )
               }
@@ -92,12 +109,12 @@ const LoginForm = ({
   );
 };
 
-LoginForm.defaultProps = {
+SignUpForm.defaultProps = {
   error: null,
   isPending: false,
 };
 
-LoginForm.propTypes = {
+SignUpForm.propTypes = {
   isPending: PropTypes.bool,
   error: PropTypes.string,
   onSubmit: PropTypes.func.isRequired
@@ -110,10 +127,10 @@ const mapStateToProps = (state)=>({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit : ({userData, history}) => { dispatch(login({userData, history}))}
+  onSubmit : ({userData, history}) => { dispatch(signup({userData, history}))}
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginForm);
+)(SignUpForm);

@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import ProfileModal from '@components/Profile';
-import SuccessAlert from '@components/SuccessAlert';
+import React, { useState, Component } from 'react';
+import PropTypes from 'prop-types';
+import moment from 'moment';
+import { connect } from 'react-redux';
+import { fetchAccounts } from '@actions/account'
+import SyncLoader from 'react-spinners/SyncLoader';
 import AccountModal from '@components/Account';
 import NavBar from '@components/NavBar';
 import Modal from 'react-modal';
-import '../../public/assets/styles/dashboard.css';
+import { decodeToken } from '@utils';
+import '../../public/assets/styles/customer.css';
 
 const customStyles = {
   content: {
@@ -26,97 +30,158 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-const CustomerDashboard = () => {
-  const [modalType, setModalType] = useState('none');
 
-  const afterOpenModal = () => {};
+class CustomerDashboard extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      modalType: 'none'
+    }
+  }
 
-  const closeModal = () => {
-    setModalType('none');
-  };
+  componentDidMount () {
+    const {getAccounts, history} = this.props
+    getAccounts('sholaadeola@gmail.com', history)
+  }
 
-  return (
-    <div className="dash-wrapper">
-      <NavBar className="header" />
-      <div className="banner">
-        <div className="balance">
-          <p>Account Balance</p>
-          <h3 id="current-balance">0.00</h3>
-        </div>
-        <button
-          id="account-button"
-          type="button"
-          onClick={() => {
-                setModalType('create_account');
+  setModalType (type){
+    this.setState({
+      modalType: type
+    });
+  }
+
+  closeModal(){
+    this.setState({
+      modalType: 'none'
+    });
+  }
+
+  render() {
+    const { modalType } = this.state;
+    console.log(modalType)
+
+    const { isPending, accounts, error, history } = this.props;
+    console.log(accounts.length);
+    const user = decodeToken(history)
+    return (
+      <div className="dash-wrapper">
+        <NavBar className="header" user={user} />
+        <div className="banner">
+          <div className="balance">
+            <p>Account Balance</p>
+            <h3 id="current-balance">0.00</h3>
+          </div>
+          <button
+            id="account-button"
+            type="button"
+            onClick={() => {
+                this.setModalType('create_account');
           }}
-        >
+          >
           Create an account
-        </button>
-      </div>
-      <div className="content">
-        <div id="loadingText">
-          <div id="loader" />
-            Loading
+          </button>
         </div>
-        <div id="accountText">No account has been created</div>
-        <div className="tableDiv">
-          <table id="account-table">
-            <tr>
-              <th className="table-title" colSpan="6">
-                My Accounts
-              </th>
-            </tr>
-            <tr>
-              <th className="table-header" />
-              <th className="table-header">Type</th>
-              <th className="table-header">Account Number</th>
-              <th className="table-header">Status</th>
-              <th className="table-header">Created On</th>
-              <th className="table-header">Balance</th>
-            </tr>
-          </table>
+        <div className="content">
+          <SyncLoader
+            sizeUnit="em"
+            size={0.6}
+            color="blue"
+            loading={isPending}
+          />
+          {
+          (accounts.length > 0 && !isPending) ? (
+            <>
+              <div className="tableDiv">
+                <table id="account-table">
+                  <thead>
+                    <tr>
+                      <th className="table-title" colSpan="6">
+                      My Accounts
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th className="table-header" />
+                      <th className="table-header">Type</th>
+                      <th className="table-header">Account Number</th>
+                      <th className="table-header">Status</th>
+                      <th className="table-header">Created On</th>
+                      <th className="table-header">Balance</th>
+                    </tr>
+                    {  accounts.map(account=>{
+                    const formatted = moment(account.createdOn).format('D, MMMM YYYY')
+                    return (
+                      <tr>
+                        <td>
+                          <img src={`../../public/assets/images/${account.type}-account-logo.svg`} alt={`${account.type}`} />                          
+                        </td>
+                        <td>
+                          {account.type}
+                        </td>
+                        <td>
+                          {account.accountNumber}
+                        </td>
+                        <td>
+                          {account.status}
+                        </td>
+                        <td>
+                          {formatted}
+                        </td>
+                        <td>
+                        ₦
+                          {account.balance}
+                        </td>
+                      </tr>
+                  )})
+                  }
+                  </tbody>
+                </table>
+              </div>
+            </>
+          ) : (<div id="accountText">No account has been created</div>) 
+        }
         </div>
-        <div className="tableDiv">
-          <table id="transaction-table">
-            <tr>
-              <th className="table-title" colSpan="5">
-                Transaction History
-              </th>
-              <th className="account-filter" colSpan="1">
-                <div className="ct-select-group ct-js-select-group">
-                  <select className="ct-select ct-js-select">
-                    <option>All</option>
-                    <option>Credit</option>
-                    <option>Savings</option>
-                  </select>
-                </div>
-              </th>
-            </tr>
-            <tr>
-              <th className="table-header">Type</th>
-              <th className="table-header">Account Number</th>
-              <th className="table-header">Created On</th>
-              <th className="table-header">Amount</th>
-              <th className="table-header">Old Balance</th>
-              <th className="table-header">New Balance</th>
-            </tr>
-          </table>
-        </div>
-      </div>
 
-      <Modal
-        isOpen={modalType === 'create_account'}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Create Account Modal"
-      >
-        <AccountModal />
-      </Modal>
-      {/* <ProfileModal /> */}
-      {/* <SuccessAlert /> */}
-    </div>
-  );
+        <Modal
+          isOpen={modalType === 'create_account'}
+          onRequestClose={()=>this.closeModal()}
+          style={customStyles}
+          contentLabel="Create Account Modal"
+        >
+          <AccountModal close={()=>this.closeModal()} />
+        </Modal>
+      </div>
+    )
+  };
 };
 
-export default CustomerDashboard;
+
+CustomerDashboard.defaultProps = {
+  error: null,
+};
+
+CustomerDashboard.propTypes = {
+  isPending: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+  accounts: PropTypes.array.isRequired,
+  getAccounts: PropTypes.func.isRequired
+}
+
+
+const mapStateToProps = (state)=>({
+  isPending: state.account.isPending,
+  error: state.account.error,
+  user: state.auth.user,
+  accounts: state.account.accounts,
+  transactions: state.account.transactions
+});
+
+const mapDispatchToProps = dispatch => ({
+  getAccounts : (history) => { dispatch(fetchAccounts(history))}
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CustomerDashboard);

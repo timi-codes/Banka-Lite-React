@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createAccount } from '@actions/account'
 
-const AccountModal = () => {
+class AccountModal extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      type: "default"
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const {value} = e.target;
+    this.setState({
+      type : value,
+    });
+  }
+
+  render(){
+    const { type } = this.state;
+    const { createNewAccount, error, close, history } = this.props;
   return (
     <div id="accountModal" className="modal">
       <div className="onboarding-modal">
@@ -41,24 +62,46 @@ const AccountModal = () => {
         </label>
 
         <div className="ct-select-group ct-js-select-group">
-          <select className="ct-select ct-js-select" id="account-type">
-            <option value="default" disabled selected>
-            Select account type
-          </option>
+          <select
+            className="ct-select ct-js-select"
+            onChange={this.handleChange}
+            value={this.state.type}
+          >
+            <option value="default" disabled>
+              Select account type
+            </option>
             <option value="current">Current</option>
             <option value="savings">Savings</option>
           </select>
         </div>
 
-        <button className="signup" type="button">
+        <button
+          className="signup"
+          type="button"
+          onClick={()=>{
+          createNewAccount(type, history)
+          close()
+        }}
+        >
           <i className="fa fa-circle-o-notch fa-spin" />
         Create
         </button>
 
-        <p className="error" />
+        {error && (<p className="error">{error}</p>)}
       </div>
     </div>
-  );
+  )};
 };
 
-export default AccountModal;
+const mapStateToProps = (state)=>({
+  error: state.account.error,
+});
+
+const mapDispatchToProps = dispatch => ({
+  createNewAccount : (type, history) => { dispatch(createAccount(type, history))}
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AccountModal);

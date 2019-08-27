@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import './navbar.css';
 
-const NavBar = () => {
+const NavBar = ({ user }) => {
   return (
     <header>
       <div className="top">
@@ -12,10 +12,9 @@ const NavBar = () => {
         </Link>
         <div className="current-user web-user dropdown">
           <img className="avatar" src="../../public/assets/images/emeka copy@3x.png" alt="Avatar" />
-          <h4 id="current-user">Timi Tejumola</h4>
+          <h4 id="current-user">{user.email}</h4>
           <img className="arrow-down" src="../../public/assets/images/arrow-drop-down.svg" alt="Arrow Down" />
           <div className="dropdown-content">
-            <button id="profile-button" type="button">Profile</button>
             <Link href="/">Logout</Link>
           </div>
         </div>
