@@ -114,7 +114,7 @@ exports[`Application test should not crash app 1`] = `
                         <img
                           alt="logo"
                           className="logo"
-                          src="../../public/assets/images/banka-light-logo.svg"
+                          src="icon-mock"
                         />
                       </a>
                     </Link>
@@ -168,7 +168,7 @@ exports[`Application test should not crash app 1`] = `
                       >
                         <img
                           alt="200 Branches"
-                          src="../../../public/assets/images/branch_img.svg"
+                          src="icon-mock"
                         />
                         <div>
                           <h4>
@@ -184,7 +184,7 @@ exports[`Application test should not crash app 1`] = `
                       >
                         <img
                           alt="100K Transactions"
-                          src="../../../public/assets/images/transactions-img.svg"
+                          src="icon-mock"
                         />
                         <div>
                           <h4>
@@ -200,7 +200,7 @@ exports[`Application test should not crash app 1`] = `
                       >
                         <img
                           alt="3M Happy Customers"
-                          src="../../../public/assets/images/happy-customer-img.svg"
+                          src="icon-mock"
                         />
                         <div>
                           <h4>
@@ -248,7 +248,7 @@ exports[`Application test should not crash app 1`] = `
                     >
                       <img
                         alt="Open an account"
-                        src="../../../public/assets/images/open-account-img.svg"
+                        src="icon-mock"
                       />
                       <div>
                         <h4>
@@ -261,7 +261,7 @@ exports[`Application test should not crash app 1`] = `
                     >
                       <img
                         alt="100K Transactions"
-                        src="../../../public/assets/images/transaction-history-img.svg"
+                        src="icon-mock"
                       />
                       <div>
                         <h4>
@@ -274,7 +274,7 @@ exports[`Application test should not crash app 1`] = `
                     >
                       <img
                         alt="3M Happy Customers"
-                        src="../../../public/assets/images/internet-support-img.svg"
+                        src="icon-mock"
                       />
                       <div>
                         <h4>
@@ -346,7 +346,7 @@ exports[`Application test should render account modal 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
                 "type": "client",
               },
             }
@@ -545,7 +545,7 @@ exports[`Application test should work fine on AccountModal Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
                 "type": "client",
               },
             }
@@ -693,7 +693,7 @@ exports[`Application test should work fine on AccountModal Page 2`] = `
             <img
               alt="logo"
               id="logo"
-              src="../../public/assets/images/banka-blue-logo.svg"
+              src="icon-mock"
             />
             <div
               className="current-user web-user dropdown"
@@ -701,7 +701,11 @@ exports[`Application test should work fine on AccountModal Page 2`] = `
               <img
                 alt="Avatar"
                 className="avatar"
-                src="../../public/assets/images/emeka copy@3x.png"
+                src={
+                  Object {
+                    "process": [Function],
+                  }
+                }
               />
               <h4
                 id="current-user"
@@ -711,7 +715,7 @@ exports[`Application test should work fine on AccountModal Page 2`] = `
               <img
                 alt="Arrow Down"
                 className="arrow-down"
-                src="../../public/assets/images/arrow-drop-down.svg"
+                src="icon-mock"
               />
               <div
                 className="dropdown-content"
@@ -835,7 +839,7 @@ exports[`Application test should work fine on CustomerDashboard Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
                 "type": "client",
               },
             }
@@ -852,7 +856,7 @@ exports[`Application test should work fine on CustomerDashboard Page 1`] = `
                     "email": "sholaadeola@gmail.com",
                     "id": 4,
                     "isAdmin": false,
-                    "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+                    "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
                     "type": "client",
                   },
                 }
@@ -865,7 +869,7 @@ exports[`Application test should work fine on CustomerDashboard Page 1`] = `
                   <img
                     alt="logo"
                     id="logo"
-                    src="../../public/assets/images/banka-blue-logo.svg"
+                    src="icon-mock"
                   />
                   <div
                     className="current-user web-user dropdown"
@@ -873,7 +877,11 @@ exports[`Application test should work fine on CustomerDashboard Page 1`] = `
                     <img
                       alt="Avatar"
                       className="avatar"
-                      src="../../public/assets/images/emeka copy@3x.png"
+                      src={
+                        Object {
+                          "process": [Function],
+                        }
+                      }
                     />
                     <h4
                       id="current-user"
@@ -881,7 +889,7 @@ exports[`Application test should work fine on CustomerDashboard Page 1`] = `
                     <img
                       alt="Arrow Down"
                       className="arrow-down"
-                      src="../../public/assets/images/arrow-drop-down.svg"
+                      src="icon-mock"
                     />
                     <div
                       className="dropdown-content"
@@ -1104,7 +1112,7 @@ exports[`Application test should work fine on Login Page 1`] = `
               "email": "sholaadeola@gmail.com",
               "id": 4,
               "isAdmin": false,
-              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
               "type": "client",
             },
           }
@@ -1126,7 +1134,7 @@ exports[`Application test should work fine on Login Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
                 "type": "client",
               },
             }
@@ -1147,7 +1155,7 @@ exports[`Application test should work fine on Login Page 1`] = `
             >
               <img
                 alt="logo"
-                src="../../../public/assets/images/banka-blue-logo.svg"
+                src="icon-mock"
               />
               <h3>
                 Welcome back, login to continue
@@ -1837,7 +1845,7 @@ exports[`Application test should work fine on SignUp Page 1`] = `
               "email": "sholaadeola@gmail.com",
               "id": 4,
               "isAdmin": false,
-              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
               "type": "client",
             },
           }
@@ -1859,7 +1867,7 @@ exports[`Application test should work fine on SignUp Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk5MzcxMCwiZXhwIjoxNTY2OTk3MzEwfQ.JVGlANixXZsr4Vw5mgfklAInQHH2vnEPLjD14du52pk",
                 "type": "client",
               },
             }
@@ -1880,7 +1888,7 @@ exports[`Application test should work fine on SignUp Page 1`] = `
             >
               <img
                 alt="logo"
-                src="../../../public/assets/images/banka-blue-logo.svg"
+                src="icon-mock"
               />
               <h3>
                 Welcome back to banka, signup to get started

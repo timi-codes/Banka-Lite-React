@@ -28,28 +28,15 @@ module.exports = {
       },
       {
         test: /\.(png|jpeg|jpg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: 'imgs',
+        use: [
+          {
+            loader: 'file-loader',
           },
-        },
+        ]
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              svgoConfig: {
-                plugins: {
-                  removeViewBox: false,
-                },
-              },
-            },
-          },
-        ],
+        use: ['@svgr/webpack', 'url-loader']
       },
       {
         test: /\.(css|scss|sass)/i,

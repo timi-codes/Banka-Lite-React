@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import AchievementSection from '@components/AchievementSection';
 import ServiceSection from '@components/ServiceSection';
+import Logo from '../../public/assets/images/banka-light-logo.svg';
 import '../../public/assets/styles/home.css';
 
 const customStyles = {
@@ -32,7 +33,7 @@ const HomePage = () => {
           <Link to="/">
             <img
               className="logo"
-              src="../../public/assets/images/banka-light-logo.svg"
+              src={Logo}
               alt="logo"
             />
           </Link>

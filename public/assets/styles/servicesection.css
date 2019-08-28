@@ -10,19 +10,16 @@
   padding-top: 5rem;
 }
 
-.actions-section > :first-child {
-  background: var(--primary-blue)
-    url('../../../public/assets/images/open-account-bg.svg') no-repeat;
+.actions-section> :first-child {
+  background: var(--primary-blue) url('../images/open-account-bg.svg') no-repeat;
 }
 
-.actions-section > :nth-child(2) {
-  background: var(--primary-blue)
-    url('../../../public/assets/images/view-transaction-bg.svg') no-repeat;
+.actions-section> :nth-child(2) {
+  background: var(--primary-blue) url('../images/view-transaction-bg.svg') no-repeat;
 }
 
-.actions-section > :nth-child(3) {
-  background: var(--primary-blue)
-    url('../../../public/assets/images/internet-support-bg.svg') no-repeat;
+.actions-section> :nth-child(3) {
+  background: var(--primary-blue) url('../images/internet-support-bg.svg') no-repeat;
 }
 
 .action {
