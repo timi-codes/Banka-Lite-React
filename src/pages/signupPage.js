@@ -62,11 +62,11 @@ signup to get started
             <Form id="form">
               <Field type="text" name="firstname" placeholder="First Name" data-testid="firstname" />
               {
-                errors.firstname && touched.firstname && (<p className="error">{errors.firstname}</p>)
+                errors.firstname && touched.firstname && (<p className="error" data-testid="fname-error">{errors.firstname}</p>)
               }
               <Field type="text" name="lastname" placeholder="Last Name" data-testid="lastname" />
               {
-                errors.lastname && touched.lastname && (<p className="error">{errors.lastname}</p>)
+                errors.lastname && touched.lastname && (<p className="error" data-testid="lname-error">{errors.lastname}</p>)
               }
               <Field
                 type="email"
@@ -76,7 +76,7 @@ signup to get started
                 placeholder="Email Address"
               />
               {
-                errors.email && touched.email && (<p className="error">{errors.email}</p>)
+                errors.email && touched.email && (<p className="error" data-testid="email-error">{errors.email}</p>)
               }
               <Field
                 type="password"
@@ -86,9 +86,6 @@ signup to get started
               />
               {
                 errors.password && touched.password && (<p className="error">{errors.password}</p>)
-              }
-              {
-                error && (<p className="error">{error}</p>)
               }
               <button type="submit" disabled={isSubmitting} data-testid="submit-form">
                 {isSubmitting ? 'SUBMITTING':  'Signup'}
@@ -121,7 +118,10 @@ SignUpForm.defaultProps = {
 SignUpForm.propTypes = {
   isPending: PropTypes.bool,
   error: PropTypes.string,
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired,
 }
 
 const mapStateToProps = (state)=>({

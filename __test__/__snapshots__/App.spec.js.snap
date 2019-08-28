@@ -294,6 +294,208 @@ exports[`Application test should not crash app 1`] = `
 </Provider>
 `;
 
+exports[`Application test should render account modal 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(AccountModal)
+        user={
+          Object {
+            "email": "timileyin@gmail.com",
+          }
+        }
+      >
+        <AccountModal
+          createNewAccount={[Function]}
+          error={null}
+          user={
+            Object {
+              "data": Object {
+                "email": "sholaadeola@gmail.com",
+                "id": 4,
+                "isAdmin": false,
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
+                "type": "client",
+              },
+            }
+          }
+        >
+          <div
+            className="modal"
+            id="accountModal"
+          >
+            <div
+              className="onboarding-modal"
+            >
+              <h3>
+                Create a bank account
+              </h3>
+              <label
+                htmlFor="fname"
+              >
+                Name
+                <input
+                  disabled={true}
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  type="text"
+                />
+              </label>
+              <label
+                htmlFor="email"
+              >
+                Email Address
+                <input
+                  disabled={true}
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  type="text"
+                />
+              </label>
+              <label
+                htmlFor="balance"
+              >
+                Opening Balance
+                <input
+                  className="opbalance"
+                  id="balance"
+                  name="balance"
+                  placeholder="Opening Balance"
+                  type="text"
+                  value="0.00"
+                />
+              </label>
+              <div
+                className="ct-select-group ct-js-select-group"
+              >
+                <select
+                  className="ct-select ct-js-select"
+                  onChange={[Function]}
+                  value="default"
+                >
+                  <option
+                    disabled={true}
+                    value="default"
+                  >
+                    Select account type
+                  </option>
+                  <option
+                    value="current"
+                  >
+                    Current
+                  </option>
+                  <option
+                    value="savings"
+                  >
+                    Savings
+                  </option>
+                </select>
+              </div>
+              <button
+                className="signup"
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="fa fa-circle-o-notch fa-spin"
+                />
+                Create
+              </button>
+            </div>
+          </div>
+        </AccountModal>
+      </Connect(AccountModal)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`Application test should render notfound page 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <NotFoundPage
+        user={
+          Object {
+            "email": "timileyin@gmail.com",
+          }
+        }
+      >
+        <div>
+          404 Page
+        </div>
+      </NotFoundPage>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
 exports[`Application test should work fine on AccountModal Page 1`] = `
 <Provider
   store={
@@ -343,7 +545,7 @@ exports[`Application test should work fine on AccountModal Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1Mjg2MiwiZXhwIjoxNTY2OTU2NDYyfQ.57WF3BkCJWBIKVyJaYEts-iIIz4eQxunjYC8wYGdBz4",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
                 "type": "client",
               },
             }
@@ -633,7 +835,7 @@ exports[`Application test should work fine on CustomerDashboard Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1Mjg2MiwiZXhwIjoxNTY2OTU2NDYyfQ.57WF3BkCJWBIKVyJaYEts-iIIz4eQxunjYC8wYGdBz4",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
                 "type": "client",
               },
             }
@@ -650,7 +852,7 @@ exports[`Application test should work fine on CustomerDashboard Page 1`] = `
                     "email": "sholaadeola@gmail.com",
                     "id": 4,
                     "isAdmin": false,
-                    "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1Mjg2MiwiZXhwIjoxNTY2OTU2NDYyfQ.57WF3BkCJWBIKVyJaYEts-iIIz4eQxunjYC8wYGdBz4",
+                    "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
                     "type": "client",
                   },
                 }
@@ -902,7 +1104,7 @@ exports[`Application test should work fine on Login Page 1`] = `
               "email": "sholaadeola@gmail.com",
               "id": 4,
               "isAdmin": false,
-              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1Mjg2MiwiZXhwIjoxNTY2OTU2NDYyfQ.57WF3BkCJWBIKVyJaYEts-iIIz4eQxunjYC8wYGdBz4",
+              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
               "type": "client",
             },
           }
@@ -924,7 +1126,7 @@ exports[`Application test should work fine on Login Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1Mjg2MiwiZXhwIjoxNTY2OTU2NDYyfQ.57WF3BkCJWBIKVyJaYEts-iIIz4eQxunjYC8wYGdBz4",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
                 "type": "client",
               },
             }
@@ -1210,12 +1412,14 @@ exports[`Application test should work fine on Login Page 1`] = `
                       onSubmit={[Function]}
                     >
                       <FormikConnect(FieldInner)
+                        data-testid="email"
                         id="email"
                         name="email"
                         placeholder="Email Address"
                         type="text"
                       >
                         <FieldInner
+                          data-testid="email"
                           formik={
                             Object {
                               "dirty": false,
@@ -1360,6 +1564,7 @@ exports[`Application test should work fine on Login Page 1`] = `
                           type="text"
                         >
                           <input
+                            data-testid="email"
                             id="email"
                             name="email"
                             onBlur={[Function]}
@@ -1371,12 +1576,14 @@ exports[`Application test should work fine on Login Page 1`] = `
                         </FieldInner>
                       </FormikConnect(FieldInner)>
                       <FormikConnect(FieldInner)
+                        data-testid="password"
                         id="password"
                         name="password"
                         placeholder="Password"
                         type="password"
                       >
                         <FieldInner
+                          data-testid="password"
                           formik={
                             Object {
                               "dirty": false,
@@ -1521,6 +1728,7 @@ exports[`Application test should work fine on Login Page 1`] = `
                           type="password"
                         >
                           <input
+                            data-testid="password"
                             id="password"
                             name="password"
                             onBlur={[Function]}
@@ -1532,6 +1740,7 @@ exports[`Application test should work fine on Login Page 1`] = `
                         </FieldInner>
                       </FormikConnect(FieldInner)>
                       <button
+                        data-testid="submit-form"
                         disabled={false}
                         type="submit"
                       >
@@ -1628,7 +1837,7 @@ exports[`Application test should work fine on SignUp Page 1`] = `
               "email": "sholaadeola@gmail.com",
               "id": 4,
               "isAdmin": false,
-              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1Mjg2MiwiZXhwIjoxNTY2OTU2NDYyfQ.57WF3BkCJWBIKVyJaYEts-iIIz4eQxunjYC8wYGdBz4",
+              "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
               "type": "client",
             },
           }
@@ -1650,7 +1859,7 @@ exports[`Application test should work fine on SignUp Page 1`] = `
                 "email": "sholaadeola@gmail.com",
                 "id": 4,
                 "isAdmin": false,
-                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1Mjg2MiwiZXhwIjoxNTY2OTU2NDYyfQ.57WF3BkCJWBIKVyJaYEts-iIIz4eQxunjYC8wYGdBz4",
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNob2xhYWRlb2xhQGdtYWlsLmNvbSIsImlkIjo0LCJpc0FkbWluIjpmYWxzZSwidHlwZSI6ImNsaWVudCIsImlhdCI6MTU2Njk1ODU3NywiZXhwIjoxNTY2OTYyMTc3fQ.qC6SEnGHjOlEIgfDJ0KRKog_JQWA8G-NQwYjKvVnZsw",
                 "type": "client",
               },
             }

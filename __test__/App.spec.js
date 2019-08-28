@@ -10,6 +10,7 @@ import SignUpPage from '@pages/signupPage';
 import CustomerDashboard from '@pages/customer';
 import AccountModal from '@components/Account';
 import NavBar from '@components/NavBar';
+import NotFoundPage from '@pages/notfound';
 import mockData from './__mock__/mockData';
 
 import App from '../src/routes/AppRouter';
@@ -182,5 +183,40 @@ describe('Application test', () => {
       </Provider>
     );
     wrapper.find('Link').simulate('click')
+  });
+
+  it('should render notfound page', () => {
+
+    const props = {
+      user: {
+        email: "timileyin@gmail.com"
+      }
+    }
+    const wrapper = mount(
+      <Provider store={store}>
+        <BrowserRouter>
+          <NotFoundPage {...props} />
+        </BrowserRouter>
+      </Provider>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+
+  it('should render account modal', () => {
+
+    const props = {
+      user: {
+        email: "timileyin@gmail.com"
+      }
+    }
+    const wrapper = mount(
+      <Provider store={store}>
+        <BrowserRouter>
+          <AccountModal {...props} />
+        </BrowserRouter>
+      </Provider>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

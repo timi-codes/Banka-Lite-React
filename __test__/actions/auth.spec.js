@@ -38,15 +38,6 @@ const history = {
   push: jest.fn()
 };
 
-const dispatch = jest.fn(() => ({
-  type: AUTH_SUCCESS,
-  payload: {
-    user: authResponse,
-    isPending: false,
-    isAuthenticated: true,
-    error: null
-  }
-}));
 
 describe('Action tests', () => {
   beforeEach(() => {
@@ -121,6 +112,75 @@ describe('Action tests', () => {
     return store
       .dispatch(
         actions.login({ userData: { email: '', password: '' }, history })
+      )
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
+  it('creates AUTH_SUCCESS, AUTH_PENDING when signup is successful', () => {
+
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: authResponse
+      });
+    });
+    const expectedActions = [
+      {
+        type: AUTH_PENDING,
+        payload: {
+          isPending: true,
+        }
+      },
+      {
+        type: AUTH_SUCCESS,
+        payload: {
+          isPending: false,
+          isAuthenticated: true,
+          user: authResponse,
+        }
+      }
+    ];
+
+    return store
+      .dispatch(
+        actions.signup({
+          userData: { email: '', password: '' },
+          history,
+        })
+      )
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
+  it('creates AUTH_FAILURE on signup failure', () => {
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.reject({
+        status: 400,
+        response: authResponse
+      });
+    });
+    const expectedActions = [
+      {
+        type: AUTH_PENDING,
+        payload: {
+          isPending: true,
+        }
+      },
+      {
+        type: AUTH_FAILED,
+        payload: {
+          isPending: false,
+        }
+      }
+    ];
+    return store
+      .dispatch(
+        actions.signup({ userData: { email: '', password: '' }, history })
       )
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);

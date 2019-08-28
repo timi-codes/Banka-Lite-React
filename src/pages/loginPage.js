@@ -55,25 +55,23 @@ const LoginForm = ({
                 id="email"
                 name="email"
                 placeholder="Email Address"
+                data-testid="email"
               />
               {
-                errors.email && touched.email && (<p className="error">{errors.email}</p>)
+                errors.email && touched.email && (<p className="error" data-testid="email-error">{errors.email}</p>)
               }
               <Field
                 type="password"
                 id="password"
                 name="password"
                 placeholder="Password"
+                data-testid="password"
               />
               {
                 errors.password && touched.password && (<p className="error">{errors.password}</p>)
               }
-              {
-                error && (<p className="error">{error}</p>)
-              }
-           
-              <button type="submit" disabled={isSubmitting}>
-                Login
+              <button type="submit" disabled={isSubmitting} data-testid="submit-form">
+                {isSubmitting ? 'SUBMITTING':  'Login'}
               </button>
               <div className="loader">
                 <SyncLoader

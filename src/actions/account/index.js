@@ -71,8 +71,6 @@ export const fetchAccounts = (history)=> {
   }
 }
 
-
-
 export const createAccount = (type)=> {
   return async dispatch => {
 
@@ -91,24 +89,6 @@ export const createAccount = (type)=> {
       const message = getErrorResponse(error);
       Toastr.error(message);
       dispatch(fetchAccountFailed());
-    }
-  }
-}
-
-
-export const fetchTransactions = (accountNumber)=> {
-  return async dispatch => {
-    dispatch(fetchAccountPending());
-    try {
-      const response = await client().get(`/accounts/${accountNumber}/transactions`);
-      const {data} = getSuccessResponse(response);
-      dispatch(fetchTransactionSuccess(data));
-    } catch(error){
-
-      const message = getErrorResponse(error);
-      Toastr.error(message);
-      dispatch(fetchAccountFailed());
-
     }
   }
 }

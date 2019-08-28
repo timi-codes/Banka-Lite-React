@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test signup page should render customer dashboard when empty 1`] = `
+<div>
+  <div
+    class="dash-wrapper"
+  >
+    <header>
+      <div
+        class="top"
+      >
+        <img
+          alt="logo"
+          id="logo"
+          src="../../public/assets/images/banka-blue-logo.svg"
+        />
+        <div
+          class="current-user web-user dropdown"
+        >
+          <img
+            alt="Avatar"
+            class="avatar"
+            src="../../public/assets/images/emeka copy@3x.png"
+          />
+          <h4
+            id="current-user"
+          >
+            email@gmail.com
+          </h4>
+          <img
+            alt="Arrow Down"
+            class="arrow-down"
+            src="../../public/assets/images/arrow-drop-down.svg"
+          />
+          <div
+            class="dropdown-content"
+          >
+            <a
+              href="/"
+            >
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="banner"
+    >
+      <div
+        class="balance"
+      >
+        <p>
+          Account Balance
+        </p>
+        <h3
+          id="current-balance"
+        >
+          0.00
+        </h3>
+      </div>
+      <button
+        id="account-button"
+        type="button"
+      >
+        Create an account
+      </button>
+    </div>
+    <div
+      class="content"
+    >
+      <div
+        id="accountText"
+      >
+        No account has been created
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test signup page should render customer table with account 1`] = `
+<div>
+  <div
+    class="dash-wrapper"
+  >
+    <header>
+      <div
+        class="top"
+      >
+        <img
+          alt="logo"
+          id="logo"
+          src="../../public/assets/images/banka-blue-logo.svg"
+        />
+        <div
+          class="current-user web-user dropdown"
+        >
+          <img
+            alt="Avatar"
+            class="avatar"
+            src="../../public/assets/images/emeka copy@3x.png"
+          />
+          <h4
+            id="current-user"
+          >
+            email@gmail.com
+          </h4>
+          <img
+            alt="Arrow Down"
+            class="arrow-down"
+            src="../../public/assets/images/arrow-drop-down.svg"
+          />
+          <div
+            class="dropdown-content"
+          >
+            <a
+              href="/"
+            >
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="banner"
+    >
+      <div
+        class="balance"
+      >
+        <p>
+          Account Balance
+        </p>
+        <h3
+          id="current-balance"
+        >
+          0.00
+        </h3>
+      </div>
+      <button
+        id="account-button"
+        type="button"
+      >
+        Create an account
+      </button>
+    </div>
+    <div
+      class="content"
+    >
+      <div
+        class="css-0"
+      >
+        <div
+          class="css-ibvn5k"
+        />
+        <div
+          class="css-18h190t"
+        />
+        <div
+          class="css-1bt58ph"
+        />
+      </div>
+      <div
+        class="tableDiv"
+      >
+        <table
+          id="account-table"
+        >
+          <thead>
+            <tr>
+              <th
+                class="table-title"
+                colspan="6"
+              >
+                My Accounts
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th
+                class="table-header"
+              />
+              <th
+                class="table-header"
+              >
+                Type
+              </th>
+              <th
+                class="table-header"
+              >
+                Account Number
+              </th>
+              <th
+                class="table-header"
+              >
+                Status
+              </th>
+              <th
+                class="table-header"
+              >
+                Created On
+              </th>
+              <th
+                class="table-header"
+              >
+                Balance
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  alt="savings"
+                  src="../../public/assets/images/savings-account-logo.svg"
+                />
+              </td>
+              <td>
+                savings
+              </td>
+              <td>
+                10184349343403
+              </td>
+              <td>
+                dormant
+              </td>
+              <td>
+                28, August 2019
+              </td>
+              <td>
+                ₦
+                1000
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
