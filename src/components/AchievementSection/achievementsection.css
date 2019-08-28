@@ -1,0 +1,86 @@
+/**
+easy banking section
+**/
+
+.achievement-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  margin-top: -4rem;
+}
+
+.achievement {
+  background: white;
+  border-radius: 5px;
+  padding: 1.5rem 4rem 1.5rem 1.5rem;
+  display: flex;
+  margin-right: 1.5rem;
+  box-shadow: 12px 12px 22px 1px rgba(146, 146, 146, 0.2);
+}
+
+.achievement img {
+  height: 80px;
+  width: 80px;
+  margin-right: 1rem;
+}
+
+.achievement h4 {
+  font-size: 2.7rem;
+  color: var(--dark-grey);
+  text-align: left;
+}
+
+.achievement p {
+  font-size: 1rem;
+  color: var(--light-grey);
+  text-align: start;
+  text-align: left;
+}
+
+.easy-banking-section {
+  text-align: center;
+  padding: 0 10rem 7rem 10rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--dark-grey);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.easy-banking-section {
+  color: var(--light-grey);
+}
+
+.create-account-section {
+  display: flex;
+  justify-content: center;
+  background-color: #f7f7f7;
+  padding: 2rem 0;
+}
+
+.create-account-section h5 {
+  font-size: 1.1rem;
+  color: var(--dark-grey);
+  margin-right: 1.5rem;
+  align-self: center;
+}
+
+label {
+  font-size: 12px;
+  text-align: start !important;
+  align-items: start;
+  color: #494949;
+}
+
+@media only screen and (max-width: 600px) {
+  .achievement-section {
+    flex-flow: column nowrap;
+    margin-top: -7rem !important;
+  }
+  .achievement {
+    margin-top: 0.5rem;
+    margin-right: 0px;
+  }
+}

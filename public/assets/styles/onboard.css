@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+
+:root {
+  --primary-blue: #0c4bef;
+  --accent-yellow: #fbb416;
+  --danger-red: #ff3d3d;
+  --success-green: #13ce03;
+  --light-grey: #a0a0a0;
+  --dark-grey: #333333;
+  --input-color: #dae5f7;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.blue_section {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-blue);
+  flex-basis: 50%;
+  padding: 0 5rem;
+}
+
+h1 {
+  max-width: 100% !important
+}
+
+h3 {
+  text-align: center;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+  justify-items: center;
+  align-self: center;
+  align-items: center;
+  padding: 0 10rem;
+}
+
+.form-container img {
+  width: 120px;
+  height: 120px
+}
+
+.form-container button {
+  background: var(--primary-blue);
+  padding: 1rem 2rem;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 16px
+}
+
+.form-container button:hover {
+  background: var(accent-yellow)
+}
+
+
+.error {
+  color: var(--danger-red);
+  font-size: 14px;
+}
+
+#form {
+  width: 25rem;
+}
+
+
+.loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2em;
+  text-align: center
+}
+
+.loader span {
+  margin-left: 10px;
+  color: var(--accent-yellow);
+  font-size: 14px;
+}
+
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 16px 0;
+  border: 1px solid var(--input-color);
+  outline: none;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .blue_section {
+    display: none;
+  }
+
+  .form-container {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-items: center;
+    align-self: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  #form {
+    width: 19rem;
+  }
+}

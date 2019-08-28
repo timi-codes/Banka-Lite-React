@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+
+:root {
+  --primary-blue: #0c4bef;
+  --accent-yellow: #fbb416;
+  --danger-red: #ff3d3d;
+  --success-green: #13ce03;
+  --light-grey: #a0a0a0;
+  --dark-grey: #333333;
+  --input-color: #dae5f7;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
