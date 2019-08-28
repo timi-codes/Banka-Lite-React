@@ -10,6 +10,9 @@ import AccountModal from '@components/Account';
 import NavBar from '@components/NavBar';
 import Modal from 'react-modal';
 import '../../public/assets/styles/customer.css';
+import SavingsIcon from '../../public/assets/images/savings-account-logo.svg';
+import CurrentIcon from '../../public/assets/images/current-account-logo.svg';
+
 
 const customStyles = {
   content: {
@@ -112,7 +115,12 @@ class CustomerDashboard extends Component{
                     return (
                       <tr key={account.Number}>
                         <td>
-                          <img src={`../../public/assets/images/${account.type}-account-logo.svg`} alt={`${account.type}`} />                          
+                          <img
+                            src={
+                           account.type==="savings" ? SavingsIcon : CurrentIcon
+                          }
+                            alt={`${account.type}`}
+                          />                          
                         </td>
                         <td>
                           {account.type}

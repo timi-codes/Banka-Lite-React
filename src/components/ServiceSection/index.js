@@ -1,12 +1,15 @@
 import React from 'react';
-import './servicesection.css';
+import '../../../public/assets/styles/servicesection.css';
+import OpenAccountIcon from '../../../public/assets/images/open-account-img.svg';
+import TransationIcon from '../../../public/assets/images/transaction-history-img.svg';
+import SupportIcon from '../../../public/assets/images/internet-support-img.svg';
 
 const ServiceSection = () => {
   return (
     <div className="actions-section">
       <div className="action">
         <img
-          src="../../../public/assets/images/open-account-img.svg"
+          src={OpenAccountIcon}
           alt="Open an account"
         />
         <div>
@@ -16,7 +19,7 @@ const ServiceSection = () => {
 
       <div className="action">
         <img
-          src="../../../public/assets/images/transaction-history-img.svg"
+          src={TransationIcon}
           alt="100K Transactions"
         />
         <div>
@@ -26,7 +29,7 @@ const ServiceSection = () => {
 
       <div className="action">
         <img
-          src="../../../public/assets/images/internet-support-img.svg"
+          src={SupportIcon}
           alt="3M Happy Customers"
         />
         <div>

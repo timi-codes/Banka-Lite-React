@@ -1,12 +1,15 @@
 import React from 'react';
-import './achievementsection.css';
+import '../../../public/assets/styles/achievementsection.css';
+import BranchIcon from '../../../public/assets/images/branch_img.svg';
+import TransactionIcon from '../../../public/assets/images/transactions-img.svg';
+import CustomerIcon from '../../../public/assets/images/happy-customer-img.svg';
 
 const AchievementSection = () => {
   return (
     <div className="achievement-section" id="test">
       <div className="achievement">
         <img
-          src="../../../public/assets/images/branch_img.svg"
+          src={BranchIcon}
           alt="200 Branches"
         />
         <div>
@@ -17,7 +20,7 @@ const AchievementSection = () => {
 
       <div className="achievement">
         <img
-          src="../../../public/assets/images/transactions-img.svg"
+          src={TransactionIcon}
           alt="100K Transactions"
         />
         <div>
@@ -28,7 +31,7 @@ const AchievementSection = () => {
 
       <div className="achievement">
         <img
-          src="../../../public/assets/images/happy-customer-img.svg"
+          src={CustomerIcon}
           alt="3M Happy Customers"
         />
         <div>

@@ -12,7 +12,7 @@ exports[`Test signup page should render customer dashboard when empty 1`] = `
         <img
           alt="logo"
           id="logo"
-          src="../../public/assets/images/banka-blue-logo.svg"
+          src="icon-mock"
         />
         <div
           class="current-user web-user dropdown"
@@ -20,7 +20,7 @@ exports[`Test signup page should render customer dashboard when empty 1`] = `
           <img
             alt="Avatar"
             class="avatar"
-            src="../../public/assets/images/emeka copy@3x.png"
+            src="[object Object]"
           />
           <h4
             id="current-user"
@@ -30,7 +30,7 @@ exports[`Test signup page should render customer dashboard when empty 1`] = `
           <img
             alt="Arrow Down"
             class="arrow-down"
-            src="../../public/assets/images/arrow-drop-down.svg"
+            src="icon-mock"
           />
           <div
             class="dropdown-content"
@@ -91,7 +91,7 @@ exports[`Test signup page should render customer table with account 1`] = `
         <img
           alt="logo"
           id="logo"
-          src="../../public/assets/images/banka-blue-logo.svg"
+          src="icon-mock"
         />
         <div
           class="current-user web-user dropdown"
@@ -99,7 +99,7 @@ exports[`Test signup page should render customer table with account 1`] = `
           <img
             alt="Avatar"
             class="avatar"
-            src="../../public/assets/images/emeka copy@3x.png"
+            src="[object Object]"
           />
           <h4
             id="current-user"
@@ -109,7 +109,7 @@ exports[`Test signup page should render customer table with account 1`] = `
           <img
             alt="Arrow Down"
             class="arrow-down"
-            src="../../public/assets/images/arrow-drop-down.svg"
+            src="icon-mock"
           />
           <div
             class="dropdown-content"
@@ -212,7 +212,7 @@ exports[`Test signup page should render customer table with account 1`] = `
               <td>
                 <img
                   alt="savings"
-                  src="../../public/assets/images/savings-account-logo.svg"
+                  src="icon-mock"
                 />
               </td>
               <td>

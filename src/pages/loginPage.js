@@ -7,7 +7,7 @@ import { Formik, Form, Field } from 'formik';
 import {Link} from 'react-router-dom';
 import * as Yup from 'yup';
 import SyncLoader from 'react-spinners/SyncLoader';
-
+import Logo from '../../public/assets/images/banka-blue-logo.svg'
 
 
 const loginSchema = Yup.object().shape({
@@ -35,7 +35,7 @@ const LoginForm = ({
     <div className="container">
       <div className="blue_section"><h1>We are creating Financial Happiness for all.</h1></div>
       <div className="form-container">
-        <img src="../../../public/assets/images/banka-blue-logo.svg" alt="logo" />
+        <img src={Logo} alt="logo" />
         <h3>Welcome back, login to continue</h3>
         <Formik
           initialValues={{

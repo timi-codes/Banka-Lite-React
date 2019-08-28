@@ -8,4 +8,3 @@ install:
   - npm install
 script:
   - npm test -- -u
-  - npm test
