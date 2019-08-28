@@ -43,3 +43,7 @@ node_modules
 ./dist
 
 .vscode
+
+#snapshots
+src/tests/__snapshots__
+__snapshots__
